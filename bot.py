@@ -125,6 +125,29 @@ async def coinflip(interaction: discord.Interaction):
     result = random.choice(["Heads 🪙", "Tails 🪙"])
     await interaction.response.send_message(f"🪙 The coin landed on: **{result}**")
 
+@bot.tree.command(name="wouldyourather", description="Get a random would-you-rather question")
+@app_commands.allowed_installs(guilds=True, users=True)
+@app_commands.allowed_contexts(guilds=True, dms=True, private_channels=True)
+async def wouldyourather(interaction: discord.Interaction):
+    questions = [
+        "Would you rather be able to fly or be invisible?",
+        "Would you rather always be 10 minutes late or 20 minutes early?",
+        "Would you rather have unlimited snacks or unlimited free time?",
+        "Would you rather live in the past or the future?",
+        "Would you rather be able to talk to animals or speak every language?"
+    ]
+
+    question = random.choice(questions)
+
+    embed = discord.Embed(
+        title="Would You Rather",
+        description=question,
+        color=discord.Color.green()
+    )
+    embed.set_footer(text=f"Asked by {interaction.user.display_name}")
+
+    await interaction.response.send_message(embed=embed)
+
 @bot.tree.command(name="8ball", description="Ask the magic 8-ball a question.")
 @app_commands.allowed_installs(guilds=True, users=True)
 @app_commands.allowed_contexts(guilds=True, dms=True, private_channels=True)
