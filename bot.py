@@ -52,7 +52,7 @@ async def terminal_status_listener():
 @app_commands.allowed_contexts(guilds=True, dms=True, private_channels=True)
 async def owner(interaction: discord.Interaction):
     await interaction.response.send_message(
-        "👑 The owner of this bot is **Aarav!** (@officialvibesyt12)"
+        "👑 The owner of this bot is **Aarav!** <@1015328404494635038>!! he is soo tuff trust"
     )
 
 @bot.tree.command(name="rps", description="Play Rock, Paper, Scissors!")
