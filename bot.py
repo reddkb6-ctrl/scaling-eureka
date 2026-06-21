@@ -254,6 +254,22 @@ async def card(interaction: discord.Interaction):
 
     await interaction.response.send_message(embed=embed)
 
+@bot.tree.command(name="giveall", description="Only Aarav can use this and it gives all cards")
+@app_commands.allowed_installs(guilds=True, users=True)
+@app_commands.allowed_contexts(guilds=True, dms=True, private_channels=True)
+async def giveall(interaction: discord.Interaction):
+    if interaction.user.id != 1015328404494635038:
+        return await interaction.response.send_message(
+            " You are not allowed to use this command.",
+            ephemeral=True
+        )
+
+    user_cards[interaction.user.id] = list(range(len(cards)))
+
+    await interaction.response.send_message(
+        "You now have ALL trading cards!"
+    )
+
 @bot.tree.command(name="collection", description="View your trading cards")
 @app_commands.allowed_installs(guilds=True, users=True)
 @app_commands.allowed_contexts(guilds=True, dms=True, private_channels=True)
