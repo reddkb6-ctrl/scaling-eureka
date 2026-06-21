@@ -101,9 +101,9 @@ async def coinflip(interaction: discord.Interaction):
 @app_commands.describe(question="The question you want to ask the 8-ball")
 async def eightball(interaction: discord.Interaction, question: str):
     responses = [
-        "It is certain. 🟢", "Without a doubt. 🟢", "You may rely on it. 🟢", "Outlook good. 🟢",
-        "Reply hazy, try again. 🟡", "Ask again later. 🟡", "Better not tell you now. 🟡",
-        "Don't count on it. 🔴", "My reply is no. 🔴", "Outlook not so good. 🔴", "Very doubtful. 🔴"
+        "It is certain. ", "Without a doubt. ", "probably broskid. ", "Outlook good. ",
+        "Reply hazy, try again. ", "Ask again later. ", "Better not tell you now. ",
+        "Don't count on it. ", "My reply is no. ", "Outlook not so good. ", "Very doubtful. "
     ]
     reply = random.choice(responses)
     await interaction.response.send_message(
