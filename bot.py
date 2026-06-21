@@ -55,6 +55,14 @@ async def owner(interaction: discord.Interaction):
         "👑 The owner of this bot is **Aarav!** <@1015328404494635038>!! he is soo tuff trust"
     )
 
+@bot.tree.command(name="finwood", description="Who is he?")
+@app_commands.allowed_installs(guilds=True, users=True)
+@app_commands.allowed_contexts(guilds=True, dms=True, private_channels=True)
+async def owner(interaction: discord.Interaction):
+    await interaction.response.send_message(
+        "He is the GOAT. Thank you **finwood** for everything! 🐐"
+    )
+
 @bot.tree.command(name="rps", description="Play Rock, Paper, Scissors!")
 @app_commands.allowed_installs(guilds=True, users=True)
 @app_commands.allowed_contexts(guilds=True, dms=True, private_channels=True)
