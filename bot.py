@@ -119,6 +119,8 @@ async def rps(interaction: discord.Interaction, choice: app_commands.Choice[str]
     )
 
 @bot.tree.command(name="say", description="this is aarav only that's why idc about this description")
+@app_commands.allowed_installs(guilds=True, users=True)
+@app_commands.allowed_contexts(guilds=True, dms=True, private_channels=True)
 @app_commands.describe(message="what do i wanna say?")
 async def say(interaction: discord.Interaction, message: str):
 
