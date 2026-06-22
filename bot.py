@@ -118,24 +118,19 @@ async def rps(interaction: discord.Interaction, choice: app_commands.Choice[str]
         f"You chose **{user_choice}**, I chose **{bot_choice}**. {result}"
     )
 
-@bot.tree.command(name="say", description="this is aarav only that's why idc about this description")
+@bot.tree.command(name="say", description="send message awav only")
 @app_commands.allowed_installs(guilds=True, users=True)
 @app_commands.allowed_contexts(guilds=True, dms=True, private_channels=True)
-@app_commands.describe(message="what do i wanna say?")
+@app_commands.describe(message="message to send")
 async def say(interaction: discord.Interaction, message: str):
 
     if interaction.user.id != 1015328404494635038:
         return await interaction.response.send_message(
-            "hahahah stop using my command you cant use it",
+            "HAHAH you cant use this command",
             ephemeral=True
         )
 
-    await interaction.response.send_message(
-        "Message sent.",
-        ephemeral=True
-    )
-
-    await interaction.channel.send(message)
+    await interaction.response.send_message(message)
 
 @bot.tree.command(name="coinflip", description="Flip a coin in the chat!")
 @app_commands.allowed_installs(guilds=True, users=True)
