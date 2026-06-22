@@ -134,7 +134,7 @@ async def wouldyourather(interaction: discord.Interaction):
         "Would you rather always be 10 minutes late or 20 minutes early?",
         "Would you rather have unlimited snacks or unlimited free time?",
         "Would you rather live in the past or the future?",
-        "Would you rather be able to talk to animals or speak every language?"
+        "Would you rather play Ro-restaurants or Tycoons?"
     ]
 
     question = random.choice(questions)
