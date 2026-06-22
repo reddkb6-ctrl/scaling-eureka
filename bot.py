@@ -120,30 +120,25 @@ async def rps(interaction: discord.Interaction, choice: app_commands.Choice[str]
 
 @bot.tree.command(
     name="say",
-    description="awav only command"
+    description="Owner only command."
 )
 @app_commands.describe(
-    channel="",
-    message="message"
+    message="Message to send"
 )
-async def say(
-    interaction: discord.Interaction,
-    channel: discord.TextChannel,
-    message: str
-):
+async def say(interaction: discord.Interaction, message: str):
     if interaction.user.id != 1015328404494635038:
         await interaction.response.send_message(
-            "cant use this command",
+            "You cannot use this command.",
             ephemeral=True
         )
         return
-
-    await channel.send(message)
 
     await interaction.response.send_message(
         "Message sent.",
         ephemeral=True
     )
+
+    await interaction.channel.send(message)
 
 @bot.tree.command(name="coinflip", description="Flip a coin in the chat!")
 @app_commands.allowed_installs(guilds=True, users=True)
