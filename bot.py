@@ -93,6 +93,14 @@ async def finwood(interaction: discord.Interaction):
         "He is the GOAT. Thank you **finwood** for everything! 🐐"
     )
 
+@bot.tree.command(name="qwezwise", description="Who is qwezwise?")
+@app_commands.allowed_installs(guilds=True, users=True)
+@app_commands.allowed_contexts(guilds=True, dms=True, private_channels=True)
+async def finwood(interaction: discord.Interaction):
+    await interaction.response.send_message(
+        "qwezeise has bren very big bren"
+    )
+
 @bot.tree.command(name="rps", description="Play Rock, Paper, Scissors!")
 @app_commands.allowed_installs(guilds=True, users=True)
 @app_commands.allowed_contexts(guilds=True, dms=True, private_channels=True)
